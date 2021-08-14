@@ -1,0 +1,27 @@
+.movieDetailContainer {
+    display: flex;
+    height: 250px;
+}
+
+.moviePicture {
+    min-width: 200px;
+    height: 250px;
+    background-color:darkslategray;
+}
+
+.movieDetail {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+
+.movieYearLengthDirector {
+    display: flex;
+}
+.movieCastDetails {
+    display: flex;
+}
+
+.movieDescription {
+    display: flex;
+}

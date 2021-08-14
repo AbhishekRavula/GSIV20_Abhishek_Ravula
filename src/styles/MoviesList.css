@@ -1,0 +1,28 @@
+.MovieCard {
+    height: 250px;
+    width: 200px;
+    border-radius: 7px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.MoviePicture {
+    /* min-height: 170px; */
+    background-color: #DFDFDF;
+    flex: 0.7;
+}
+
+.MovieTitleAndRating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 0.1;
+}
+.MovieTitleAndRating :first-child {
+    font-weight: 700;
+}
+
+.MovieDescription {
+    flex:0.2
+}
