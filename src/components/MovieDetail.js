@@ -1,32 +1,46 @@
+import { useState, useEffect } from "react"
 import Header from "../libs/Header"
 import '../styles/movieDetail.css'
+import {useParams} from 'react-router-dom'
+import {useSelector}  from 'react-redux'
 
 function MovieDetail() {
+
+    const [movieDetail, setmovieDetail] = useState([])
+    const {movieId} = useParams()
+    const movies = useSelector(state => state.searchedMovies.length > 1  ? state.searchedMovies : state.movies)
+
+    useEffect(() => {
+        movies.map(movie => {
+            if (movie.id == movieId) {
+                setmovieDetail(movie)
+            }
+        })
+    }, [])
+    
     return (
         <>
             <Header>
                 Movie Details
             </Header>
             <div style={{padding:"20px"}}>
-                <div className="movieDetailContainer">
-                    <div className="moviePicture">
-                        <img src="" alt="Movie Picture" />
-                    </div>
+                <div className="movieDetailContainer">  
+                    <img src={`https://image.tmdb.org/t/p/w500/${movieDetail.picture}`} className="moviePicture" alt="Movie Picture" />
                     <div className="movieDetail">
-                        <div>Movie Title</div>
+                        <div className="movieNameRating">
+                            <div>{movieDetail.title}</div>
+                            <div>{movieDetail.rating}</div>
+                        </div>
                         <div className="movieYearLengthDirector">
-                            <div>Year |</div>
-                            <div>Year |</div>
-                            <div>Year |</div>
+                            <div>{movieDetail.year} |</div>
+                            <div> {movieDetail.runtime} |</div>
+                            <div>{movieDetail.director}</div>
                         </div>
                         <div className="movieCastDetails">
-                            <div>Cast:</div>
-                            <div>Actor 1</div>
+                            <div><b>Cast:</b> {movieDetail.cast && movieDetail.cast.join(", ")}</div>
                         </div>
-                        <div className="movieDescription">
-                            <div>some description some descriptionsome descriptionsome descriptionsome descriptionsome descriptionsome description
-                                some descriptionsome descriptionsome descriptionsome descriptionsome descriptionsome descriptionsome descriptionsome description
-                            </div>
+                        <div className="movieDetailDescription">
+                            <div><b>Description:</b> {movieDetail.description}</div>
                         </div>
                     </div>
                 </div>
@@ -34,4 +48,5 @@ function MovieDetail() {
         </>
     )
 }
+
 export default MovieDetail

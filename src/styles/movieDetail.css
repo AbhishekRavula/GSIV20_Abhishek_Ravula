@@ -1,27 +1,43 @@
 .movieDetailContainer {
     display: flex;
-    height: 250px;
+    height: 220px;
 }
 
 .moviePicture {
     min-width: 200px;
-    height: 250px;
+    height: 220px;
     background-color:darkslategray;
 }
 
 .movieDetail {
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
+    padding-left: 10px;
+    justify-content: space-between;
+}
+
+.movieNameRating {
+    display: flex;
+}
+
+.movieNameRating :first-child {
+    font-weight: 700;
+    margin-right: 10px;
 }
 
 .movieYearLengthDirector {
     display: flex;
 }
+
+.movieYearLengthDirector div{
+    margin-right: 5px;
+}
 .movieCastDetails {
     display: flex;
+    font-size: 15px;
 }
 
-.movieDescription {
+.movieDetailDescription {
     display: flex;
+    font-size: 15px;
 }
