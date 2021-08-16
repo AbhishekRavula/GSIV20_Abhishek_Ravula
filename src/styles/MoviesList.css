@@ -12,19 +12,19 @@
     background-color: #DFDFDF;
     width: 200px;
     height: 185px;
-    flex: 0.7;
+    /* flex: 1; */
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
 .movieTitleRatingDescription {
-    flex: 0.3;
+    /* flex: 0.3; */
     padding: 5px;
 }
 .movieTitleAndRating {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex: 0.1;
+    /* flex: 0.1; */
 }
 .movieTitleAndRating :first-child {
     font-weight: 650;
@@ -33,7 +33,7 @@
     text-overflow: ellipsis;
 }
 .movieDescription {
-    flex:0.2;
+    /* flex:0.2; */
     font-size:small;
     display: -webkit-box;
     -webkit-line-clamp: 2;

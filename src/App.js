@@ -4,7 +4,7 @@ import MoviesList from './components/MoviesList';
 import MovieDetail from './components/MovieDetail'
 import { useDispatch } from 'react-redux'
 import { fetchMovies } from './store/reducer';
-import { useEffect} from 'react'
+import { useEffect } from 'react'
 
 
 function App() {

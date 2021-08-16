@@ -1,7 +1,8 @@
+import '../App.css'
 function Grid(props) {
 
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", padding:"20px"}}>
+        <div className="grid">
             {props.children}
         </div>
     )

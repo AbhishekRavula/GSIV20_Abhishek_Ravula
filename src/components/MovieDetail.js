@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react"
 import Header from "../libs/Header"
 import '../styles/movieDetail.css'
-import {useParams} from 'react-router-dom'
-import {useSelector}  from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function MovieDetail() {
 
     const [movieDetail, setmovieDetail] = useState([])
-    const {movieId} = useParams()
-    const movies = useSelector(state => state.searchedMovies.length > 1  ? state.searchedMovies : state.movies)
+    const { movieId } = useParams()
+    const movies = useSelector(state => state.searchedMovies.length > 1 ? state.searchedMovies : state.movies)
 
     useEffect(() => {
         movies.map(movie => {
@@ -17,24 +17,26 @@ function MovieDetail() {
             }
         })
     }, [])
-    
+
     return (
         <>
             <Header>
                 Movie Details
             </Header>
-            <div style={{padding:"20px"}}>
-                <div className="movieDetailContainer">  
-                    <img src={`https://image.tmdb.org/t/p/w500/${movieDetail.picture}`} className="moviePicture" alt="Movie Picture" />
+            <div style={{ padding: "20px" }}>
+                <div className="movieDetailContainer">
+                    {movieDetail.picture ? <img src={`https://image.tmdb.org/t/p/w500/${movieDetail.picture}`} className="moviePicture" alt="Movie Picture" /> : 
+                        <div className="moviePicture"/>}
                     <div className="movieDetail">
                         <div className="movieNameRating">
                             <div>{movieDetail.title}</div>
                             <div>{movieDetail.rating}</div>
                         </div>
                         <div className="movieYearLengthDirector">
-                            <div>{movieDetail.year} |</div>
-                            <div> {movieDetail.runtime} |</div>
-                            <div>{movieDetail.director}</div>
+                            {movieDetail.releaseDate && <div>{movieDetail.releaseDate.slice(0, 4)}</div>}
+                            {console.log("runtime", movieDetail.runtime)}
+                            {movieDetail.runtime != "0:0" && <div>| {movieDetail.runtime}</div>}
+                            {movieDetail.director && <div>| {movieDetail.director}</div>}
                         </div>
                         <div className="movieCastDetails">
                             <div><b>Cast:</b> {movieDetail.cast && movieDetail.cast.join(", ")}</div>

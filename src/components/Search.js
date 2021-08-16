@@ -8,7 +8,7 @@ function SearchNav() {
 
     const [searchTerm, setsearchTerm] = useState("")
     const dispatch = useDispatch()
-    
+
     useEffect(() => {
         dispatch(fetchSearchResults(searchTerm))
     }, [searchTerm])

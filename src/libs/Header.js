@@ -7,14 +7,14 @@ function Header(props) {
     let history = useHistory()
 
     return (
-       <div className="header">
-           <div>
+        <div className="header">
+            <div>
                 {props.children}
-           </div>
-           <div>
-                <HomeIcon onClick={() => history.push("/")}/>
-           </div>
-       </div>
+            </div>
+            <div>
+                <HomeIcon onClick={() => history.push("/")} />
+            </div>
+        </div>
     )
 }
 

@@ -26,17 +26,18 @@ function MoviesList(props) {
                         return <MovieCard key={movie.id} movie={movie} searched={true} />
                     })}
                 </Grid> :
-            <InfiniteScroll dataLength={props.movies.length} 
-                hasMore={props.page <= props.totalPages}
-                next={fetchMore}
-                loader={<h4>Loading...</h4>} scrollThreshold={1}
-            >
-                <Grid>
-                    {props.movies.map(movie => {
-                        return <MovieCard key={movie.id} movie={movie} searched={false} />
-                    })}
-                </Grid>
-            </InfiniteScroll>}
+                <InfiniteScroll dataLength={props.movies.length}
+                    hasMore={props.page <= props.totalPages}
+                    next={fetchMore}
+                    loader={<h4>Loading...</h4>} scrollThreshold={1}
+                >
+                    <Grid>
+                        {props.movies.map(movie => {
+                            return <MovieCard key={movie.id} movie={movie} searched={false} />
+                        })}
+                    </Grid>
+                </InfiniteScroll>
+            }
         </>
     )
 }
@@ -66,19 +67,17 @@ function MovieCard({ movie, searched }) {
     }
 
     return (
-        <>
-            <div className="movieCard" onClick={() => routeToMovieDetail(movie.id)}>
-                <div >
-                    <img className="movieCardPicture" src={`https://image.tmdb.org/t/p/w500/${movie.picture}`} alt="movie picture" />
+        <div className="movieCard" onClick={() => routeToMovieDetail(movie.id)}>
+            {movie.picture ?
+                <img className="movieCardPicture" src={`https://image.tmdb.org/t/p/w500/${movie.picture}`} alt="movie picture" /> :
+                <div className="movieCardPicture" />}
+            <div className="movieTitleRatingDescription">
+                <div className="movieTitleAndRating">
+                    <div>{movie.title}</div>
+                    <div>{movie.rating}</div>
                 </div>
-                <div className="movieTitleRatingDescription">
-                    <div className="movieTitleAndRating">
-                        <div>{movie.title}</div>
-                        <div>{movie.rating}</div>
-                    </div>
-                    <div className="movieDescription">{movie.description}</div>
-                </div>
+                <div className="movieDescription">{movie.description}</div>
             </div>
-        </>
+        </div>
     )
 }
