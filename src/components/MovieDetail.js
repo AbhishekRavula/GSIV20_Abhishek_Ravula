@@ -8,7 +8,7 @@ function MovieDetail() {
 
     const [movieDetail, setmovieDetail] = useState([])
     const { movieId } = useParams()
-    const movies = useSelector(state => state.searchedMovies.length > 1 ? state.searchedMovies : state.movies)
+    const movies = useSelector(state => state.movies)
 
     useEffect(() => {
         movies.map(movie => {
@@ -30,20 +30,21 @@ function MovieDetail() {
                     <div className="movieDetail">
                         <div className="movieNameRating">
                             <div>{movieDetail.title}</div>
-                            <div>{movieDetail.rating}</div>
+                            <div>({movieDetail.rating})</div>
                         </div>
                         <div className="movieYearLengthDirector">
                             {movieDetail.releaseDate && <div>{movieDetail.releaseDate.slice(0, 4)}</div>}
-                            {console.log("runtime", movieDetail.runtime)}
                             {movieDetail.runtime != "0:0" && <div>| {movieDetail.runtime}</div>}
                             {movieDetail.director && <div>| {movieDetail.director}</div>}
                         </div>
-                        <div className="movieCastDetails">
-                            <div><b>Cast:</b> {movieDetail.cast && movieDetail.cast.join(", ")}</div>
-                        </div>
+                        {movieDetail.cast && movieDetail.cast.length ? 
+                            <div className="movieCastDetails">
+                                <div><b>Cast:</b> {movieDetail.cast.join(", ")}</div>
+                            </div> : null}
+                        {movieDetail.description && movieDetail.description.length ?
                         <div className="movieDetailDescription">
                             <div><b>Description:</b> {movieDetail.description}</div>
-                        </div>
+                        </div> : ""}
                     </div>
                 </div>
             </div>

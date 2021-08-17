@@ -13,16 +13,20 @@
     display: flex;
     flex-direction: column;
     padding-left: 10px;
-    justify-content: space-between;
 }
 
 .movieNameRating {
     display: flex;
+    align-items: center;
 }
 
 .movieNameRating :first-child {
     font-weight: 700;
     margin-right: 10px;
+}
+
+.movieNameRating :nth-child(2) {
+    font-size: 13px;
 }
 
 .movieYearLengthDirector {

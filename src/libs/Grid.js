@@ -2,7 +2,7 @@ import '../App.css'
 function Grid(props) {
 
     return (
-        <div className="grid">
+        <div className="grid m-10">
             {props.children}
         </div>
     )

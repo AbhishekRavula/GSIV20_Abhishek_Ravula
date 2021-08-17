@@ -1,20 +1,9 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
-import MoviesList from './components/MoviesList';
-import MovieDetail from './components/MovieDetail'
-import { useDispatch } from 'react-redux'
-import { fetchMovies } from './store/reducer';
-import { useEffect } from 'react'
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import MoviesList from "./components/MoviesList";
+import MovieDetail from "./components/MovieDetail";
 
 function App() {
-
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(fetchMovies())
-  }, [])
-
   return (
     <Router>
       <Switch>
@@ -26,7 +15,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  )
+  );
 }
 
 export default App;

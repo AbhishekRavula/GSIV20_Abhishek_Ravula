@@ -1,30 +1,26 @@
 .movieCard {
-    height: 250px;
-    width: 200px;
+    height: 270px;
     border-radius: 7px;
-    display: flex;
-    flex-direction: column;
     box-shadow: 0 1px 1px 1px gray;
-    margin-bottom: 20px;
-    margin-right: 10px;
+    align-self: center;
+    justify-self: center;
+    min-width: 150px;
+    width: 100%;
 }
 .movieCardPicture {
     background-color: #DFDFDF;
-    width: 200px;
-    height: 185px;
-    /* flex: 1; */
+    height: 75%;
+    width: 100%;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
 .movieTitleRatingDescription {
-    /* flex: 0.3; */
     padding: 5px;
 }
 .movieTitleAndRating {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* flex: 0.1; */
 }
 .movieTitleAndRating :first-child {
     font-weight: 650;
@@ -32,8 +28,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.movieTitleAndRating :nth-child(2) {
+    font-size: 13px;
+}
 .movieDescription {
-    /* flex:0.2; */
     font-size:small;
     display: -webkit-box;
     -webkit-line-clamp: 2;
