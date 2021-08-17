@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import "../styles/moviesList.css";
+import "../styles/MoviesList.css";
 import Grid from "../libs/Grid";
 import Header from "../libs/Header";
 import Search from "./Search";
@@ -11,8 +11,7 @@ import {
 } from "../store/reducer";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect } from "react";
-import { ADD_MOVIES } from '../store/actions';
-
+import { ADD_MOVIES } from "../store/actions";
 
 function MoviesList(props) {
   const dispatch = useDispatch();
@@ -55,7 +54,7 @@ const mapStateToProps = (state) => {
   return {
     movies: state.movies,
     page: state.page,
-    total_pages: state.total_pages
+    total_pages: state.total_pages,
   };
 };
 
