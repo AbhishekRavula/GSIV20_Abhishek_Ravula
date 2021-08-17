@@ -20,19 +20,19 @@
 
 ## Things That I Did Well:
 
-# Managing state by using react-redux state management library:
+### Managing state by using react-redux state management library:
 
 Passing state between components is complex in react. By using react-redux, it can be made easy by the use of redux global store to store the data and can
 access it for any child component.
 
-# Responsiveness of the page:
+### Responsiveness of the page:
 
 Using Grid columns with auto fill and min-max will have a responsive page of movie cards.
 
-# Handling of asynchronous API calls by using redux-thunk:
+### Handling of asynchronous API calls by using redux-thunk:
 
 In redux, when an action creator returns a function, it function will get executed by the Redux Thunk middleware. This function doesn't need to be pure, it is thus allowed to have side effects, including executing asynchronous API calls and function can also dispatch actions.
 
-# If I had more time:
+### If I had more time:
 
 I would improve the state management and improve response of the page.
